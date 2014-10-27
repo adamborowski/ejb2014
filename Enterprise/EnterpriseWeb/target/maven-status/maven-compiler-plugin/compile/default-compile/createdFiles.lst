@@ -1,0 +1,6 @@
+pl/gda/pg/eti/kask/javaee/enterprise/view/ViewBook.class
+pl/gda/pg/eti/kask/javaee/enterprise/view/validators/BookTitleValidator.class
+pl/gda/pg/eti/kask/javaee/enterprise/view/ListBooks.class
+pl/gda/pg/eti/kask/javaee/enterprise/view/EditBook.class
+pl/gda/pg/eti/kask/javaee/enterprise/view/converters/AuthorConverter.class
+pl/gda/pg/eti/kask/javaee/enterprise/view/ListAuthors.class

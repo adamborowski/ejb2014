@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <f:metadata>
+        <f:viewParam name="bookId" value="#{editBook.bookId}" />
+        <f:viewParam name="isComics" value="#{editBook.comics}" />
+        <f:event type="preRenderView" listener="#{editBook.init()}"/>
+    </f:metadata>
+    <body>
+        <ui:composition template="/WEB-INF/templates/main.xhtml">
+            <ui:define name="head">
+                <title>#{editBook.book.title}</title>
+            </ui:define>
+            <ui:define name="content">
+                <h:form id="form">
+                    <h:panelGrid columns="3">
+                        <h:outputLabel value="#{msg.title}:" for="title"/>
+                        <h:inputText id="title" value="#{editBook.book.title}" validator="#{bookTitleValidator.validate}"/>
+                        <h:message for="title"/>
+                        <h:outputLabel value="#{msg.publishDate}:" for="date"/>
+                        <h:inputText id="date" value="#{editBook.book.publishDate}" required="true">
+                            <f:convertDateTime pattern="yyyy-MM-dd"/>
+                        </h:inputText>
+                        <h:message for="date"/>
+                        <h:outputLabel value="#{msg.authors}:" for="authors"/>
+                        <h:selectManyListbox id="authors" value="#{editBook.book.authors}" converter="#{authorConverter}">
+                            <f:selectItems value="#{editBook.authorsAsSelectItems}"/>
+                        </h:selectManyListbox>
+                        <h:message for="authors"/>
+                        <h:outputLabel value="#{msg.cover}:" for="cover"/>
+                        <h:selectOneMenu id="cover" value="#{editBook.book.cover}">
+                            <f:selectItems value="#{editBook.coversAsSelectItems}"/>
+                        </h:selectOneMenu>
+                        <h:message for="cover"/>
+                        <h:outputLabel value="#{msg.volume}:" for="volume" rendered="#{editBook.comics}"/>
+                        <h:inputText id="volume" value="#{editBook.book.volume}" rendered="#{editBook.comics}"/>
+                        <h:message for="volume" rendered="#{editBook.comics}"/>
+                    </h:panelGrid>
+                    <h:message for="form"/><br/>
+                    <h:commandButton value="#{msg.save}" action="#{editBook.saveBook()}"/>
+                </h:form>
+                <h:button value="#{msg.back}" outcome="list_books.xhtml"/>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

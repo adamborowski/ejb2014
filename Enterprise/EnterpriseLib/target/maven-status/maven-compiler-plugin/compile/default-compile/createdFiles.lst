@@ -1,0 +1,10 @@
+pl/gda/pg/eti/kask/javaee/enterprise/entities/Audit.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/validators/InPast.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/package-info.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/Author.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/Library.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/validators/InPastValidator.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/ObjectFactory.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/Book.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/Cover.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/Comics.class
