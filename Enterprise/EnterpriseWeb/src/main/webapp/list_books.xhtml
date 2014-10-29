@@ -4,75 +4,80 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    <body>
-        <ui:composition template="/WEB-INF/templates/main.xhtml">
-            <ui:define name="head">
-                <title>#{msg.books}</title>
-            </ui:define>
-            <ui:define name="content">
-                <h:dataTable value="#{listBooks.books}" var="book">
+<body>
+<ui:composition template="/WEB-INF/templates/main.xhtml">
+    <ui:define name="head">
+        <title>#{msg.books}</title>
+    </ui:define>
+    <ui:define name="content">
+        <h1>Tower list</h1>
+        <h:dataTable value="#{listTowers.towers}" var="tower" styleClass="table bordered">
+            <h:column>
+                <h:outputText value="#{tower.id}"/>
+            </h:column>
+            <h:column>
+                <h:outputText value="#{tower.name}"/>
+            </h:column>
+            <h:column>
+                <h:outputText value="#{tower.height}m"/>
+            </h:column>
+            <h:column>
+                <h:dataTable value="#{tower.wizzards}" var="wizzard" styleClass="table bordered">
                     <h:column>
-                        <f:facet name="header"><h:outputText value="ID"/></f:facet>
-                        <h:outputText value="#{book.id}"/>
+                        <h:outputText value="#{wizzard.id}"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.title}"/></f:facet>
-                        <h:outputText value="#{book.title}"/>
+                        <h:outputText value="#{wizzard.name}"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.authors}"/></f:facet>
-                        <h:dataTable value="#{book.authors}" var="author">
-                            <h:column>
-                                <h:outputText value="#{author.name} #{author.surname}"/>
-                            </h:column>
-                        </h:dataTable>
+                        <h:outputText value="#{wizzard.environment.toString()}"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.publishDate}"/></f:facet>
-                        <h:outputText value="#{book.publishDate}">
-                            <f:convertDateTime pattern="yyyy-MM-dd"/>
-                        </h:outputText>
+                        <h:outputText value="#{wizzard.mana} *"/>
                     </h:column>
                     <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.view}"/></f:facet>
-                        <h:button value="#{msg.view}" outcome="view_book.xhtml">
-                            <f:param name="bookId" value="#{book.id}" />
+                        <h:button value="#{msg.view}" outcome="view_wizzard.xhtml">
+                            <f:param name="wizzardId" value="#{wizzard.id}"/>
                         </h:button>
                     </h:column>
                     <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.edit}"/></f:facet>
-                        <h:button value="#{msg.edit}" outcome="edit_book.xhtml">
-                            <f:param name="bookId" value="#{book.id}" />
+                        <h:button value="#{msg.edit}" outcome="edit_wizzard.xhtml">
+                            <f:param name="wizzardId" value="#{wizzard.id}"/>
                         </h:button>
                     </h:column>
                     <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.remove}"/></f:facet>
                         <h:form>
-                            <h:commandButton value="#{msg.remove}" action="#{listBooks.removeBook(book)}"/>
+                            <h:commandButton value="#{msg.remove}" action="#{viewTower.removeWizzard(wizzard)}"/>
                         </h:form>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.modificationDate}"/></f:facet>
-                        <h:form>
-                            <h:outputText value="#{book.modificationDate}">
-                                <f:convertDateTime pattern="yyyy-MM-dd HH:mm"/>
-                            </h:outputText>
-                        </h:form>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header"><h:outputText value="#{msg.version}"/></f:facet>
-                        <h:outputText value="#{book.version}"/>
                     </h:column>
                 </h:dataTable>
+            </h:column>
+            <h:column>
+                <h:button value="#{msg.view}" outcome="view_tower.xhtml">
+                    <f:param name="towerId" value="#{tower.id}"/>
+                </h:button>
+            </h:column>
+            <h:column>
+                <h:button value="#{msg.edit}" outcome="edit_tower.xhtml">
+                    <f:param name="towerId" value="#{tower.id}"/>
+                </h:button>
+            </h:column>
+            <h:column>
                 <h:form>
-                    <h:commandButton value="#{msg.download}" action="#{listBooks.downloadLibraryXML()}"/>
+                    <h:commandButton value="#{msg.remove}" action="#{listTowers.removeTower(tower)}"/>
                 </h:form>
-                <h:button value="#{msg.newBook}" outcome="edit_book.xhtml"/>
-                <h:button value="#{msg.newComics}" outcome="edit_book.xhtml">
-                    <f:param name="isComics" value="#{true}"/>
-                </h:button><br/>
-                <h:button value="#{msg.back}" outcome="index.xhtml"/>
-            </ui:define>
-        </ui:composition>
-    </body>
+            </h:column>
+        </h:dataTable>
+        <h:form>
+            <h:commandButton value="#{msg.download}" action="#{listTowers.downloadLibraryXML()}"/>
+        </h:form>
+        <h:button value="new tower" outcome="edit_tower.xhtml"/>
+        <h:button value="new wizzard" outcome="edit_wizzard.xhtml" style="margin-left:10px;"/>
+        <h:form>
+        <h:commandButton  value="training 13" action="#{listTowers.training(13)}"/>
+        <h:commandButton value="training 666" action="#{listTowers.training(666)}"/>
+        </h:form>
+    </ui:define>
+</ui:composition>
+</body>
 </html>
