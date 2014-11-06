@@ -1,12 +1,18 @@
 package pl.gda.pg.eti.kask.javaee.enterprise.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +31,7 @@ import lombok.ToString;
  * @author psysiu
  */
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(of = "id")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -42,17 +48,21 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
+
     @XmlAttribute
     @Column(name = "login", unique = true)
     private String login;
-    
+
     @XmlAttribute
     @Column(name = "user_group")
     private String group;
-    
+
     @XmlTransient
     @Column(name = "password")
     private String password;
+
     
+    
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    protected List<Tower> towers = new ArrayList<>();
 }

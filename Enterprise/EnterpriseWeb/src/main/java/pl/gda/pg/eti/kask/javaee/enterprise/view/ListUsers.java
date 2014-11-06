@@ -40,6 +40,10 @@ public class ListUsers implements Serializable {
         return currentUser;
     }
 
+    public boolean isAdminMode() {
+        return userService.isAdminMode();
+    }
+
     public void logout() {
         userService.logout();
         currentUser = null;

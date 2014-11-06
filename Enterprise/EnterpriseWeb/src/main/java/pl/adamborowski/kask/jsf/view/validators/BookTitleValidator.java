@@ -37,10 +37,10 @@ public class BookTitleValidator implements Validator {
         if (value instanceof String) {
             String title = (String) value;
             if (!Pattern.matches(PATTERN, title)) {
-                throw new ValidatorException(new FacesMessage(getMessageBundle().getString(WRONG_TITLE)));
+                throw new ValidatorException(new FacesMessage("zly tytul"));
             }
         } else {
-            throw new ValidatorException(new FacesMessage(getMessageBundle().getString(WRONG_VALUE)));
+            throw new ValidatorException(new FacesMessage("zla wartosc"));
         }
     }
 }
