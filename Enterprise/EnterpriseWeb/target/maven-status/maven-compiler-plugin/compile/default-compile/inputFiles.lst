@@ -1,3 +1,4 @@
+/home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/gda/pg/eti/kask/javaee/enterprise/view/ListUsers.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/converters/TowerConverter.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/ListTowers.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/gda/pg/eti/kask/javaee/enterprise/view/ListBooks.java
@@ -5,8 +6,11 @@
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/gda/pg/eti/kask/javaee/enterprise/view/ViewBook.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/gda/pg/eti/kask/javaee/enterprise/view/EditBook.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/gda/pg/eti/kask/javaee/enterprise/view/validators/BookTitleValidator.java
+/home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/EditUser.java
+/home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/validators/PasswordValidator.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/gda/pg/eti/kask/javaee/enterprise/view/converters/AuthorConverter.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/validators/BookTitleValidator.java
+/home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/gda/pg/eti/kask/javaee/enterprise/view/converters/PasswordConverter.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/ViewWizzard.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/ViewTower.java
 /home/adam/projekty/ejb-netbeans/Enterprise/EnterpriseWeb/src/main/java/pl/adamborowski/kask/jsf/view/EditWizzard.java

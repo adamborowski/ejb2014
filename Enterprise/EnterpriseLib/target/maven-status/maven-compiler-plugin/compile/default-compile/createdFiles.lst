@@ -1,5 +1,6 @@
 pl/gda/pg/eti/kask/javaee/enterprise/entities/Audit.class
 pl/gda/pg/eti/kask/javaee/enterprise/entities/validators/GoodManaValidator.class
+pl/gda/pg/eti/kask/javaee/enterprise/entities/User.class
 pl/gda/pg/eti/kask/javaee/enterprise/entities/validators/InPast.class
 pl/gda/pg/eti/kask/javaee/enterprise/entities/package-info.class
 pl/gda/pg/eti/kask/javaee/enterprise/entities/Author.class

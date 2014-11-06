@@ -1,4 +1,4 @@
-package pl.gda.pg.eti.kask.javaee.enterprise.entities;
+    package pl.gda.pg.eti.kask.javaee.enterprise.entities;
 
 import java.io.Serializable;
 import lombok.*;

@@ -8,6 +8,7 @@
     <class>pl.gda.pg.eti.kask.javaee.enterprise.entities.Comics</class>
     <class>pl.gda.pg.eti.kask.javaee.enterprise.entities.Sorcerer</class>
     <class>pl.gda.pg.eti.kask.javaee.enterprise.entities.Tower</class>
+    <class>pl.gda.pg.eti.kask.javaee.enterprise.entities.User</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>

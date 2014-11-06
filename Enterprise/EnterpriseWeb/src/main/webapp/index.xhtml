@@ -3,13 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets">
-    <body>
+    <body class="metro">
         <ui:composition template="/WEB-INF/templates/main.xhtml">
             <ui:define name="head">
                 <title>#{msg.books}</title>
             </ui:define>
             <ui:define name="content">
-                <h:link outcome="list_books.xhtml" value="#{msg.books}"/>
+                witaj!
+                <h:link outcome="towers/list_books.xhtml" value="#{msg.books}" class="bg-darkBrown fg-white padding10 margin10 block"/>
+                <h:link outcome="towers/users.xhtml" value="użytkownicy" class="bg-darkOrange fg-white padding10 margin10 block"/>
             </ui:define>
         </ui:composition>
     </body>
